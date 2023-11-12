@@ -1,0 +1,106 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(./assets/2560x1600-764577-Black-Desert-Mountains-Cove-Village.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #f8f8f8;
+}
+
+#card {
+  background-color: rgba(66, 59, 59, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 750px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin-block: 10px;
+}
+
+#card:hover {
+  transform: scale(1.01);
+}
+#card:hover #toggleMusicBtn {
+  display: block;
+}
+#title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.result {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.green {
+  color: #8fb339;
+}
+
+.red {
+  color: #bf4040;
+}
+
+button {
+  font-size: 14px;
+  margin: 5px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #5f4b2a;
+  color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #7b5b2f;
+}
+
+button.no {
+  background-color: #8b4949;
+}
+
+button.no:hover {
+  background-color: #9b3535;
+}
+
+.confirmedItems {
+  margin-top: 20px;
+}
+
+.confirmationList {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.confirmationList li {
+  margin: 5px 0;
+  font-size: 14px;
+  color: rgb(166, 219, 166);
+}
+strong {
+  color: rgb(166, 219, 166);
+}
+#toggleMusicBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #5f4b2a;
+  color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease-in-out;
+}
+#toggleMusicBtn:hover {
+  background-color: #7b5b2f;
+}
