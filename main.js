@@ -1,12 +1,12 @@
 function toggleMusic() {
-    const music = document.getElementById('backgroundMusic');
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-      music.currentTime = 0; // Reset playback to the beginning
-    }
+  const music = document.getElementById("backgroundMusic");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+    music.currentTime = 0;
   }
+}
 function checkConfirmation(type, isPositive = true) {
   const resultElement = document.getElementById(`${type}Result`);
   if (!resultElement.textContent) {
@@ -60,4 +60,39 @@ function checkExpGrind(item) {
     confirmedList.innerHTML += `<li>${item}</li>`;
     document.getElementById("confirmedExpGrind").style.display = "block";
   }
+}
+function resetInputs() {
+  const crystalInput = document.getElementById("crystalInput");
+  const questInput = document.getElementById("questInput");
+  const silverGrindInput = document.getElementById("silverGrindInput");
+  const expGrindInput = document.getElementById("expGrindInput");
+  const kratugaInput = document.getElementById("kratugaInput");
+  const agrisInput = document.getElementById("agrisInput");
+
+  if (crystalInput) crystalInput.value = "";
+  if (questInput) questInput.value = "";
+  if (silverGrindInput) silverGrindInput.checked = false;
+  if (expGrindInput) expGrindInput.checked = false;
+  if (kratugaInput) kratugaInput.checked = false;
+  if (agrisInput) agrisInput.checked = false;
+
+  const crystalsResult = document.getElementById("crystalsResult");
+  const questResult = document.getElementById("questResult");
+  const kratugaResult = document.getElementById("kratugaResult");
+  const silverGrindList = document.getElementById("silverGrindList");
+  const expGrindList = document.getElementById("expGrindList");
+
+  if (crystalsResult) crystalsResult.innerHTML = "";
+  if (questResult) questResult.innerHTML = "";
+  if (kratugaResult) kratugaResult.innerHTML = "";
+  if (silverGrindList) silverGrindList.innerHTML = "";
+  if (expGrindList) expGrindList.innerHTML = "";
+
+  const confirmedSilverGrind = document.getElementById("confirmedSilverGrind");
+  const confirmedExpGrind = document.getElementById("confirmedExpGrind");
+
+  if (confirmedSilverGrind) confirmedSilverGrind.style.display = "none";
+  if (confirmedExpGrind) confirmedExpGrind.style.display = "none";
+
+  alert("Inputs and Results reset successfully!");
 }
