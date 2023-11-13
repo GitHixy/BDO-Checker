@@ -32,3 +32,11 @@ BDO Checker for Grinding is a simple Electron application that helps Black Deser
 2. No need to install, just run Win32 or Win64 version based on your system.
 
 ENJOY!
+
+
+Update v1.2:
+
+- 'Reset Button' added
+- UI Update
+- Sizeable Window
+- Changed Window style
