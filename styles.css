@@ -1,13 +1,16 @@
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
   margin: 0;
+  padding: 0;
   background-image: url(./assets/2560x1600-764577-Black-Desert-Mountains-Cove-Village.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: #f8f8f8;
 }
 
@@ -16,10 +19,11 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  width: 750px;
+  width: 80%;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  margin-block: 10px;
+  margin-block: 5px;
+  max-height: 90vh;
 }
 
 #card:hover {
@@ -49,7 +53,7 @@ body {
 button {
   font-size: 14px;
   margin: 5px;
-  padding: 8px;
+  padding: 6px;
   cursor: pointer;
   background-color: #5f4b2a;
   color: #f8f8f8;
@@ -71,17 +75,20 @@ button.no:hover {
 }
 
 .confirmedItems {
-  margin-top: 20px;
+  margin-top: 10px;
 }
-
 .confirmationList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style-type: none;
   padding: 0;
   text-align: center;
 }
 
 .confirmationList li {
-  margin: 5px 0;
+  flex-basis: calc(20% - 5px);
+  margin: 5px;
   font-size: 14px;
   color: rgb(166, 219, 166);
 }
@@ -103,4 +110,32 @@ strong {
 }
 #toggleMusicBtn:hover {
   background-color: #7b5b2f;
+}
+#resetInputsBtn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #5f4b2a;
+  color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#resetInputsBtn:hover {
+  background-color: #7b5b2f;
+}
+#card:hover #resetInputsBtn {
+  display: block;
+}
+#imageContainer {
+  text-align: center;
+}
+
+#imageContainer img {
+  width: 50%;
+  max-width: 100%;
 }

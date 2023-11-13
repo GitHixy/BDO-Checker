@@ -1,93 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <title>BDO Checker</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>BDO Checker</title>
+  </head>
+  <body>
     <audio id="backgroundMusic" autoplay loop>
-        <source src="./assets/Balenos Field Theme 2.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-      </audio>
-    
+      <source src="./assets/Balenos Field Theme 2.mp3" type="audio/mp3" />
+      Your browser does not support the audio tag.
+    </audio>
+
     <div id="card">
-        <h2 id="title">-BDO Checker for Grinding-</h2>
-        <button id="toggleMusicBtn" onclick="toggleMusic()">Toggle Music</button>
-        <div>
-          <p>Have you correctly set your Crystals?</p>
-          <button onclick="checkConfirmation('crystals')">Yes</button>
-          <button class="no" onclick="checkConfirmation('crystals', false)">No</button>
-          <div id="crystalsResult" class="result"></div>
-        </div>
-    
-        <div>
-          <p>Did you accept the legendary Jetina's Quest?</p>
-          <button onclick="checkConfirmation('quest')">Yes</button>
-          <button class="no" onclick="checkConfirmation('quest', false)">No</button>
-          <div id="questResult" class="result"></div>
-        </div>
-    
-        <div>
-          <p>What adventure awaits you today? Is it a thrilling Silver Grind or an exhilarating Exp Grind?</p>
-          <button onclick="chooseGrind('silver')">Silver Grind</button>
-          <button onclick="chooseGrind('exp')">Exp Grind</button>
-        </div>
-    
-        <div id="silverGrind" style="display: none;">
-          <p>Confirmations for Silver Grind:</p>
-          <button onclick="checkSilverGrind('stoneEquipment')">Stone Equipment</button>
-          <button onclick="checkSilverGrind('itemCollection')">Item Collection Increase Scroll</button>
-          <button onclick="checkSilverGrind('churchBuffs')">Church Buffs (AP, DP, EXP)</button>
-          <button onclick="checkSilverGrind('petOnRed')">Set Pet on Red</button>
-          <button onclick="checkSilverGrind('buffCamp')">Buff Camp (Luck)</button>
-          <button onclick="checkSilverGrind('villaScroll')">Villa Scroll (Body Enhancement)</button>
-          <button onclick="checkSilverGrind('spiritPerfume')">Perfume - Spirit Perfume</button>
-          <button onclick="checkSilverGrind('frenzyElixir')">Elixir - Frenzy Draught / Frenzy Draught of Corruption</button>
-          <button onclick="checkSilverGrind('simpleCrownMeal')">Food - Simple Crown Meal</button>
-        </div>
-    
-        <div id="confirmedSilverGrind" class="confirmedItems" style="display: none;">
-          <p>Confirmed for Silver Grind:</p>
-          <ul id="silverGrindList" class="confirmationList"></ul>
-        </div>
-    
-        <div id="expGrind" style="display: none;">
-          <p>Confirmations for Exp Grind:</p>
-          <button onclick="checkExpGrind('stoneEquipment')">Stone Equipment</button>
-          <button onclick="checkExpGrind('itemCollection')">Item Collection Increase Scroll</button>
-          <button onclick="checkExpGrind('churchBuffs')">Church Buffs (AP, DP, EXP)</button>
-          <button onclick="checkExpGrind('petOnRed')">Set Pet on Red</button>
-          <button onclick="checkExpGrind('buffCamp')">Buff Camp (Luck)</button>
-          <button onclick="checkExpGrind('villaScroll')">Villa Scroll (Body Enhancement)</button>
-          <button onclick="checkExpGrind('spiritPerfume')">Perfume - Spirit Perfume</button>
-          <button onclick="checkExpGrind('frenzyElixir')">Elixir - Frenzy Draught / Frenzy Draught of Corruption</button>
-          <button onclick="checkExpGrind('simpleCrownMeal')">Food - Simple Crown Meal</button>
-          <button onclick="checkExpGrind('mercenaryExperience')">Mercenary's Experience 600%</button>
-          <button onclick="checkExpGrind('combatSkillEXP')">Combat & Skill EXP 530%</button>
-          <button onclick="checkExpGrind('blessedMessageScroll')">Blessed Message Scroll 200%</button>
-        </div>
-    
-        <div id="confirmedExpGrind" class="confirmedItems" style="display: none;">
-          <p>Confirmed for Exp Grind:</p>
-          <ul id="expGrindList" class="confirmationList"></ul>
-        </div>
-    
-        <div>
-          <p>Are you venturing into the treacherous lands of Kratuga?</p>
-          <button onclick="checkKratuga('agris')">Yes</button>
-          <button class="no" onclick="checkKratuga('agris', false)">No</button>
-          <div id="kratugaResult" class="result"></div>
-        </div>
-    
-        <div>
-          <p>For an extra boost on your journey, consider:</p>
-          <p><strong>Buff Black Spirit Combat Exp</strong> <br>Activate this buff to increase combat experience from defeating enemies.</p>
-          <p><strong>Book of Combat - Combat EXP 100%</strong> <br>Activate this book to boost your combat experience gain by 100%.</p>
-        </div>
+      <h2 id="title">-BDO Checker for Grinding-</h2>
+      <button id="resetInputsBtn" onclick="resetInputs()">Reset Inputs</button>
+      <button id="toggleMusicBtn" onclick="toggleMusic()">Toggle Music</button>
+      <div>
+        <p>Have you correctly set your Crystals?</p>
+        <button onclick="checkConfirmation('crystals')">Yes</button>
+        <button class="no" onclick="checkConfirmation('crystals', false)">
+          No
+        </button>
+        <div id="crystalsResult" class="result"></div>
       </div>
-  <script src="./main.js">
-  </script>
-</body>
+
+      <div>
+        <p>Did you accept the legendary Jetina's Quest?</p>
+        <button onclick="checkConfirmation('quest')">Yes</button>
+        <button class="no" onclick="checkConfirmation('quest', false)">
+          No
+        </button>
+        <div id="questResult" class="result"></div>
+      </div>
+
+      <div>
+        <p>
+          What adventure awaits you today? Is it a thrilling Silver Grind or an
+          exhilarating Exp Grind?
+        </p>
+        <button onclick="chooseGrind('silver')">Silver Grind</button>
+        <button onclick="chooseGrind('exp')">Exp Grind</button>
+      </div>
+
+      <div id="silverGrind" style="display: none">
+        <p>Confirmations for Silver Grind:</p>
+        <button onclick="checkSilverGrind('Stone Equipment')">
+          Stone Equipment
+        </button>
+        <button onclick="checkSilverGrind('Item Collection Increase Scroll')">
+          Item Collection Increase Scroll
+        </button>
+        <button onclick="checkSilverGrind('Church Buffs')">
+          Church Buffs (AP, DP, EXP)
+        </button>
+        <button onclick="checkSilverGrind('Pet On Red')">Set Pet on Red</button>
+        <button onclick="checkSilverGrind('Camp Buff')">Buff Camp (Luck)</button>
+        <button onclick="checkSilverGrind('Villa Scroll')">
+          Villa Scroll (Body Enhancement)
+        </button>
+        <button onclick="checkSilverGrind('Spirit Perfume')">
+          Perfume - Spirit Perfume
+        </button>
+        <button onclick="checkSilverGrind('Elixir')">
+          Elixir - Frenzy Draught / Frenzy Draught of Corruption
+        </button>
+        <button onclick="checkSilverGrind('Food')">
+          Food - Simple Crown Meal
+        </button>
+      </div>
+
+      <div
+        id="confirmedSilverGrind"
+        class="confirmedItems"
+        style="display: none"
+      >
+        <p>Confirmed for Silver Grind:</p>
+        <ul id="silverGrindList" class="confirmationList"></ul>
+      </div>
+
+      <div id="expGrind" style="display: none">
+        <p>Confirmations for Exp Grind:</p>
+        <button onclick="checkExpGrind('Stone Equipment')">
+          Stone Equipment
+        </button>
+        <button onclick="checkExpGrind('Item Collection Increase Scroll')">
+          Item Collection Increase Scroll
+        </button>
+        <button onclick="checkExpGrind('Church Buffs')">
+          Church Buffs (AP, DP, EXP)
+        </button>
+        <button onclick="checkExpGrind('Pet On Red')">Set Pet on Red</button>
+        <button onclick="checkExpGrind('Buff Camp')">Buff Camp (Luck)</button>
+        <button onclick="checkExpGrind('Villa Scroll')">
+          Villa Scroll (Body Enhancement)
+        </button>
+        <button onclick="checkExpGrind('Spirit Perfume')">
+          Perfume - Spirit Perfume
+        </button>
+        <button onclick="checkExpGrind('Elixir')">
+          Elixir - Frenzy Draught / Frenzy Draught of Corruption
+        </button>
+        <button onclick="checkExpGrind('Food')">
+          Food - Simple Crown Meal
+        </button>
+        <button onclick="checkExpGrind('Mercenary Experience')">
+          Mercenary's Experience 600%
+        </button>
+        <button onclick="checkExpGrind('Combat Skill EXP')">
+          Combat & Skill EXP 530%
+        </button>
+        <button onclick="checkExpGrind('Blessed Message Scroll')">
+          Blessed Message Scroll 200%
+        </button>
+      </div>
+
+      <div id="confirmedExpGrind" class="confirmedItems" style="display: none">
+        <p>Confirmed for Exp Grind:</p>
+        <ul id="expGrindList" class="confirmationList"></ul>
+      </div>
+
+      <div>
+        <p>Are you venturing into the treacherous lands of Kratuga?</p>
+        <button onclick="checkKratuga('agris')">Yes</button>
+        <button class="no" onclick="checkKratuga('agris', false)">No</button>
+        <div id="kratugaResult" class="result"></div>
+      </div>
+
+      <div>
+        <p>For an extra boost on your journey, consider:</p>
+        <p>
+          <strong>Buff Black Spirit Combat Exp</strong> <br />Activate this buff
+          to increase combat experience from defeating enemies.
+        </p>
+        <p>
+          <strong>Book of Combat - Combat EXP 100%</strong> <br />Activate this
+          book to boost your combat experience gain by 100%.
+        </p>
+      </div>
+    </div>
+    <div id="imageContainer">
+      <img src="./assets/pngwing.com.png" alt="BDO Logo" />
+    </div>
+    <script src="./main.js"></script>
+  </body>
 </html>
