@@ -1,6 +1,6 @@
 # BDO Checker for Grinding
 
-BDO Checker for Grinding is a simple Electron application that helps Black Desert Online players organize and check their grinding settings.
+BDO Checker for Grinding is a simple .exe application with no install that helps Black Desert Online players organize and check their grinding settings.
 
 ## Features
 
@@ -31,8 +31,15 @@ BDO Checker for Grinding is a simple Electron application that helps Black Deser
 1. Download the latest release from the https://github.com/GitHixy/BDO-Checker page.
 2. No need to install, just run Win32 or Win64 version based on your system.
 
-ENJOY!
+Wrote with VSC includes:
+- index.html
+- styles.css
+- main.js
+- assets folder
 
+The .exe application is compiled with DecSoft HTML Compiler.
+I'm a Full Stack Dev student and I've created this app just to train on writing codes,
+it turned out as a useful tool for myself preparing to grind in BDO, I hope you'll enjoy too.
 
 Update v1.2:
 
@@ -41,3 +48,6 @@ Update v1.2:
 - Sizeable Window
 - Changed Window style
 - .exe filesize optimized
+
+
+  
