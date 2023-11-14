@@ -40,3 +40,4 @@ Update v1.2:
 - UI Update
 - Sizeable Window
 - Changed Window style
+- .exe filesize optimized
